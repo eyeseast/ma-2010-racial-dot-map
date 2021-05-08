@@ -1,0 +1,9 @@
+*.py[cod]
+
+data/Mass-2010-blocks-by-race/nhgis0038_csv
+data/Mass-2010-blocks-by-race/nhgis0038_shape
+data/*.csv
+data/*.geojson
+
+.DS_Store
+output/
