@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 dorchester = {editable = true, git = "https://github.com/eyeseast/dorchester"}
+mapboxcli = "*"
 
 [dev-packages]
 

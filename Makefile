@@ -31,7 +31,7 @@ data/suffolk-2010-race.geojson: data/ma-2010-race.geojson
 	mapshaper $^ -filter 'COUNTYFP10 === "025"' -o $@
 
 output/ma-2010-race-points.csv: data/ma-2010-race.geojson
-	pipenv run dorchester plot $^ $@ --progress \
+	time pipenv run dorchester plot $^ $@ --progress \
 	  -k White \
 	  -k "Black or African American" \
 	  -k "American Indian and Alaska Native" \
@@ -41,7 +41,7 @@ output/ma-2010-race-points.csv: data/ma-2010-race.geojson
 	  -k "Two or More Races"
 
 output/suffolk-2010-race-points.csv: data/suffolk-2010-race.geojson
-	pipenv run dorchester plot $^ $@ --progress \
+	time pipenv run dorchester plot $^ $@ --progress \
 	  -k White \
 	  -k "Black or African American" \
 	  -k "American Indian and Alaska Native" \
@@ -51,4 +51,7 @@ output/suffolk-2010-race-points.csv: data/suffolk-2010-race.geojson
 	  -k "Two or More Races"
 
 output/suffolk-2010-race.mbtiles: output/suffolk-2010-race-points.csv
+	tippecanoe -zg -o $@ --drop-densest-as-needed --extend-zooms-if-still-dropping $^
+
+output/ma-2010-race.mbtiles: output/ma-2010-race-points.csv
 	tippecanoe -zg -o $@ --drop-densest-as-needed --extend-zooms-if-still-dropping $^
