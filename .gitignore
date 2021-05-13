@@ -4,6 +4,7 @@ data/Mass-2010-blocks-by-race/nhgis0038_csv
 data/Mass-2010-blocks-by-race/nhgis0038_shape
 data/*.csv
 data/*.geojson
+data/ma-2010-race.*
 
 .DS_Store
 output/

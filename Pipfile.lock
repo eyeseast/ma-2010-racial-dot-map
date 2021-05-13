@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "2be4fb1ca5681ba32107d14f0e76160ea78b73ba8d8575f30616ea21163f0092"
+            "sha256": "acb859d3c827a65f7e0df60bc3faeecaca93dc55323fa074c653dfb91e2e92a0"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -26,19 +26,19 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:6c8c9c173a8d6c5127a9812ec4b9369280caec4f574e297900dc8e735a92f71f",
-                "sha256:8bdbe29bc9308124e7e96ef912dfa1d656400499edcf398b677db739939e9ba6"
+                "sha256:3317722a1e9acbfc0d30cdf273d1708c823ceb19309e9cd91cac8a3604762341",
+                "sha256:ee3317fd79b443ef102469fac393a1ffb650ea51ac4fc27464013872c5e1ce31"
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4, 3.5'",
-            "version": "==1.17.70"
+            "version": "==1.17.72"
         },
         "botocore": {
             "hashes": [
-                "sha256:3dea2656b5555a1bcb299a83fdefe6f0ef331ffae55cc8f8edf06557342738c0",
-                "sha256:9bc8bd5f601d35658b2aaa78ebeef154fd092e64b37059e8eeef51648a3936c8"
+                "sha256:0fa93a2e2daad5791c63ee526ada66896cc483d04cb2d32bfcadfeb881203453",
+                "sha256:2aaf439e3683e4ac7e0a4f5fc3cd6779418456f3bd6f40b3e474cb151bbceab9"
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4, 3.5'",
-            "version": "==1.20.70"
+            "version": "==1.20.72"
         },
         "cachecontrol": {
             "hashes": [
@@ -95,7 +95,7 @@
         "dorchester": {
             "editable": true,
             "git": "https://github.com/eyeseast/dorchester",
-            "ref": "46f2a4276359d8f9e9e7c710a9266ef9dac0983a"
+            "ref": "158b6fd47401417860e34ccc92bca1cf14c5a974"
         },
         "fiona": {
             "hashes": [
