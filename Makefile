@@ -4,6 +4,7 @@ SHP=data/Mass-2010-blocks-by-race/nhgis0038_shape/nhgis0038_shapefile_tl2010_250
 
 FIELDS="GISJOIN,Total,White,Black or African American,American Indian and Alaska Native,Asian,Native Hawaiian and Other Pacific Islander,Other,Two or More Races"
 RACE_FIELDS="White,Black or African American,American Indian and Alaska Native,Asian,Native Hawaiian and Other Pacific Islander,Other,Two or More Races"
+COLORS=$(shell echo '\#7fc97f,\#beaed4,\#fdc086,\#ffff99,\#386cb0,\#f0027f,\#bf5b17')
 
 # NHGIS code:  H7X
 #     H7X001:      Total
@@ -57,6 +58,16 @@ output/suffolk-2010-race-points.csv: data/suffolk-2010-race.geojson
 	  -k "Native Hawaiian and Other Pacific Islander" \
 	  -k Other \
 	  -k "Two or More Races"
+
+# mapshaper comparison
+output/mapshaper/suffolk-2010-race-points.shp: data/suffolk-2010-race.geojson
+	mkdir -p $(dir $@)
+	time mapshaper $^ -dots fields=$(RACE_FIELDS) per-dot=1 colors=$(COLORS) -o $@
+
+# fails where populations are missing
+output/mapshaper/ma-2010-race-points.shp: data/ma-2010-race.shp
+	mkdir -p $(dir $@)
+	time mapshaper $^ -dots fields=$(RACE_FIELDS) per-dot=1 colors=$(COLORS) -o $@
 
 # mbtiles
 output/suffolk-2010-race.mbtiles: output/suffolk-2010-race-points.csv
